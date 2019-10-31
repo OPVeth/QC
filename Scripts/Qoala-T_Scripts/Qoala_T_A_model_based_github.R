@@ -42,9 +42,10 @@ ifelse(dir.exists(outputFolder),FALSE,dir.create(outputFolder))
 # row.names = MRI_ID !!! important step to match change the row.names 
 # col.names = colnames(simulated_data_A_model.RData)
 setwd(inputFolder)
-load("yourdatafile.RData")
-test_data <- yourdatafile
 dataset_name <- "your_dataset_name"
+stats2Table <- read.csv(paste("FreeSurfer_Output_", dataset_name, ".csv", sep=""), header=T, row.names=1)
+test_data <- stats2Table
+
 
 # -----------------------------------------------------------------
 # Or Load example with simulated data
